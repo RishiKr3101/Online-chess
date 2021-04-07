@@ -119,32 +119,45 @@ def check_click(x,y):
 def check_empty_space(x,y):
     for i in range(8):
         if(pawn_black[i] == (x,y)):
+            print("yes1")
             return False
         if(pawn_white[i] == (x,y)):
+            
             return False
         
-    
+    print("k")
     for i in range(2):
+        print("k")
         if(bishop_black[i] == (x,y)):
+            print("yes3")
             return False
         if(bishop_white[i] == (x,y)):
+            print("yes4")
             return False
         if(rook_black[i] == (x,y)):
+            print("yes5")
             return False
         if(rook_white[i] == (x,y)):
+            print("yes6")
             return False
         if(knight_black[i] == (x,y)):
+            print("yes7")
             return False
         if(knight_white[i] == (x,y)):
+            print("yes8")
             return False
         
     if king_black[0] == (x,y) :
+        print("yes9")
         return False
     if king_white[0] == (x,y):
+        print("yes10")
         return False
     if queen_black[0] == (x,y):
+        print("yes11")
         return False
     if queen_white[0] == (x,y):
+        print("yes12")
         return False
     
     return True
@@ -166,14 +179,21 @@ def handle_movement(s,pos):
                 if check_empty_space(i, pos[1]):
                     pass
                 else:
-                    print("yes1")
+                    
                     win.blit(mark, (i,pos[1]))
             for i in range(pos[1]-60 , 0+20, 60):
                 if check_empty_space(pos[0], i):
                     pass
                 else:
-                    print("yes2")
-                    win.blit(mark, (i,pos[1]))
+                    
+                    win.blit(mark, (pos[0], i))
+            
+            for i in range(pos[1]+60 , 420+20, 60):
+                if check_empty_space(pos[0], i):
+                    pass
+                else:
+                    
+                    win.blit(mark, (pos[0], i))
         
 
 
